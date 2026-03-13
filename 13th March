@@ -1,0 +1,48 @@
+import java.util.List;
+import java.util.stream.Stream;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.function.Function;
+import java.util.Map;
+
+class Thirteenmarch{
+public static void main(String[] args){
+
+
+//Sort Strings in reverse Order
+
+List<String>lstr=List.of("hello","my","name","is","Gaurav","Sharma");
+List<String>res=lstr.stream().sorted(Comparator.reverseOrder()).toList();
+System.out.println(res);
+
+
+//Group all Strings by their length
+
+Map<Integer,List<String>>map=lstr.stream().collect(Collectors.groupingBy(String::length));
+System.out.println(map);
+
+
+//Partition Numbers into Even and Odd
+
+List<Integer>list=List.of(1,2,3,4,5,6,8,9,10);
+Map<Boolean,List<Integer>>m=list.stream().collect(Collectors.partitioningBy(e->e%2==0));
+System.out.println(m);
+
+
+//Get SummaryStatistics Get count,sum,min,average,max
+list.stream().mapToInt(Integer::intValue).summaryStatistics().getSum();
+list.stream().mapToInt(Integer::intValue).summaryStatistics().getMin();
+list.stream().mapToInt(Integer::intValue).summaryStatistics().getCount();
+list.stream().mapToInt(Integer::intValue).summaryStatistics().getAvg();
+list.stream().mapToInt(Integer::intValue).summaryStatistics().getMax();
+
+
+
+
+
+
+
+}
+
+
+}
