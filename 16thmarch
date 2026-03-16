@@ -1,0 +1,27 @@
+import java.util.*;
+import java.util.stream.*;
+
+public class StreamQuestions {
+    public static void main(String[] args) {
+        List<List<Integer>> list = Arrays.asList(
+                Arrays.asList(1, 2, 3),
+                Arrays.asList(4, 5),
+                Arrays.asList(6, 7, 8)
+        );
+        List<Integer> flattenedList = list.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
+        System.out.println("Flattened List: " + flattenedList);
+
+
+        // Question 2: Convert Integer List to String List
+        List<Integer> numbers = Arrays.asList(1, 2, 3);
+
+        List<String> stringList = numbers.stream()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
+
+        System.out.println("String List: " + stringList);
+    }
+}
