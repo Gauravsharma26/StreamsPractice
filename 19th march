@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+class Nineteen{
+
+
+public static void main(String[] args){
+
+Scanner st=new Scanner(System.in);
+int n=st.nextInt();
+
+int number=123456;
+Integer a=String.valueOf(number).chars().map(e->e-'0').sum();
+System.out.println(a);
+
+
+//calculate factorial
+long factorial=IntStream.rangeClosed(1,n).mapToLong(i->i).reduce(1,(k,b)->k*b);
+
+System.out.println(factorial);
+
+
+
+}
+}
